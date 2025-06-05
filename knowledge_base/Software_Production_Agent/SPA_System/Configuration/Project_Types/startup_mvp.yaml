@@ -1,0 +1,135 @@
+
+# Startup MVP Configuration
+# Optimized for rapid development and market validation
+
+project_type: "startup_mvp"
+description: "Configuration for startup MVP development with focus on speed and validation"
+
+# Development approach
+approach:
+  methodology: "lean_startup"
+  development_style: "agile"
+  iteration_length: "1_week"
+  quality_vs_speed: "speed_focused"  # Options: speed_focused, balanced, quality_focused
+
+# Technology preferences
+technology:
+  frontend:
+    preferred: ["Next.js", "React", "Vue.js"]
+    avoid: ["Angular", "Complex frameworks"]
+  backend:
+    preferred: ["Node.js", "Python FastAPI", "Serverless"]
+    avoid: ["Java Enterprise", "Complex microservices"]
+  database:
+    preferred: ["PostgreSQL", "MongoDB", "Supabase"]
+    avoid: ["Complex distributed databases"]
+  hosting:
+    preferred: ["Vercel", "Netlify", "Railway", "Supabase"]
+    avoid: ["Complex cloud setups"]
+
+# Feature priorities
+features:
+  core_features:
+    priority: "high"
+    max_count: 3
+    description: "Essential features for MVP validation"
+  
+  nice_to_have:
+    priority: "low"
+    defer_to: "post_mvp"
+    description: "Features to add after initial validation"
+  
+  authentication:
+    required: true
+    complexity: "simple"
+    providers: ["email", "google", "github"]
+  
+  payments:
+    required: false
+    defer_until: "validation_complete"
+    
+  analytics:
+    required: true
+    level: "basic"
+    tools: ["Google Analytics", "Mixpanel"]
+
+# Quality gates (relaxed for MVP)
+quality_gates:
+  code_coverage:
+    minimum: 60
+    target: 70
+  
+  performance:
+    page_load: "< 3s"
+    api_response: "< 500ms"
+  
+  security:
+    level: "basic"
+    requirements: ["HTTPS", "Input validation", "Basic auth"]
+  
+  accessibility:
+    level: "basic"
+    wcag_compliance: "AA_partial"
+
+# Timeline constraints
+timeline:
+  total_duration: "30_days"
+  phases:
+    ideation: "2_days"
+    planning: "3_days"
+    architecture: "2_days"
+    design: "5_days"
+    development: "15_days"
+    testing: "2_days"
+    deployment: "1_day"
+
+# Team configuration
+team:
+  size: "small"  # 1-3 people
+  roles_required: ["developer", "designer"]
+  roles_optional: ["product_manager"]
+
+# Business validation
+validation:
+  user_feedback:
+    collection_method: ["surveys", "interviews", "analytics"]
+    frequency: "weekly"
+  
+  metrics:
+    primary: ["user_acquisition", "user_engagement", "feature_usage"]
+    secondary: ["performance", "error_rates"]
+  
+  success_criteria:
+    users: 100
+    retention: "30%"
+    feedback_score: "4.0/5"
+
+# Deployment strategy
+deployment:
+  strategy: "continuous"
+  environments: ["development", "production"]
+  rollback_capability: true
+  monitoring: "basic"
+
+# Cost optimization
+cost_optimization:
+  budget_limit: "$100/month"
+  free_tier_preference: true
+  scaling_approach: "gradual"
+
+# Risk mitigation
+risks:
+  technical:
+    - "Over-engineering"
+    - "Feature creep"
+    - "Technology complexity"
+  
+  business:
+    - "Market validation failure"
+    - "User acquisition challenges"
+    - "Competitive pressure"
+  
+  mitigation_strategies:
+    - "Regular user feedback"
+    - "Simple technology stack"
+    - "Rapid iteration cycles"

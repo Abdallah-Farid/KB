@@ -1,0 +1,261 @@
+
+# Single Page Application (SPA) Development Workflow
+# Complete workflow for building modern SPAs with React/Next.js
+
+workflow_name: "spa_development"
+version: "2.0"
+description: "End-to-end workflow for Single Page Application development"
+project_type: "web_app_spa"
+
+# Workflow phases
+phases:
+  ideation:
+    duration: "2-3 days"
+    description: "Project conceptualization and initial validation"
+    agents: ["analyst", "product_manager"]
+    tasks:
+      - "market_research"
+      - "competitive_analysis"
+      - "user_persona_development"
+      - "feature_brainstorming"
+      - "technical_feasibility_assessment"
+    deliverables:
+      - "Project brief"
+      - "Market analysis report"
+      - "User personas"
+      - "Initial feature list"
+      - "Technical feasibility report"
+    quality_gates:
+      - "Business case validation"
+      - "Market opportunity confirmation"
+      - "Technical feasibility approval"
+
+  planning:
+    duration: "3-5 days"
+    description: "Detailed project planning and scope definition"
+    agents: ["product_manager", "product_owner", "scrum_master"]
+    dependencies: ["ideation"]
+    tasks:
+      - "requirements_gathering"
+      - "user_story_creation"
+      - "feature_prioritization"
+      - "project_timeline_creation"
+      - "resource_planning"
+    deliverables:
+      - "Product requirements document"
+      - "User stories with acceptance criteria"
+      - "Product backlog"
+      - "Project timeline"
+      - "Resource allocation plan"
+    quality_gates:
+      - "Requirements completeness check"
+      - "Stakeholder approval"
+      - "Timeline feasibility validation"
+
+  architecture:
+    duration: "2-4 days"
+    description: "System architecture and technology stack definition"
+    agents: ["architect", "developer"]
+    dependencies: ["planning"]
+    tasks:
+      - "technology_stack_selection"
+      - "system_architecture_design"
+      - "database_design"
+      - "api_specification"
+      - "security_architecture"
+    deliverables:
+      - "Technology stack document"
+      - "System architecture diagram"
+      - "Database schema"
+      - "API specification"
+      - "Security architecture plan"
+    quality_gates:
+      - "Architecture review"
+      - "Scalability assessment"
+      - "Security validation"
+
+  design:
+    duration: "5-7 days"
+    description: "User interface and experience design"
+    agents: ["design_architect", "product_owner"]
+    dependencies: ["architecture"]
+    tasks:
+      - "wireframe_creation"
+      - "ui_design"
+      - "design_system_development"
+      - "prototype_creation"
+      - "user_testing"
+    deliverables:
+      - "Wireframes"
+      - "UI designs"
+      - "Design system"
+      - "Interactive prototype"
+      - "User testing results"
+    quality_gates:
+      - "Design review"
+      - "Usability testing"
+      - "Accessibility compliance"
+
+  development:
+    duration: "15-20 days"
+    description: "Application development and implementation"
+    agents: ["developer", "devops_engineer"]
+    dependencies: ["design"]
+    tasks:
+      - "project_setup"
+      - "frontend_development"
+      - "backend_development"
+      - "api_integration"
+      - "database_implementation"
+      - "authentication_implementation"
+      - "responsive_design_implementation"
+    deliverables:
+      - "Working application"
+      - "Source code"
+      - "API endpoints"
+      - "Database implementation"
+      - "Authentication system"
+    quality_gates:
+      - "Code review"
+      - "Functionality testing"
+      - "Performance benchmarks"
+
+  testing:
+    duration: "3-5 days"
+    description: "Comprehensive testing and quality assurance"
+    agents: ["qa_engineer", "developer"]
+    dependencies: ["development"]
+    tasks:
+      - "unit_testing"
+      - "integration_testing"
+      - "end_to_end_testing"
+      - "performance_testing"
+      - "security_testing"
+      - "accessibility_testing"
+    deliverables:
+      - "Test suite"
+      - "Test reports"
+      - "Performance metrics"
+      - "Security assessment"
+      - "Bug reports and fixes"
+    quality_gates:
+      - "Test coverage threshold"
+      - "Performance standards"
+      - "Security compliance"
+
+  deployment:
+    duration: "1-2 days"
+    description: "Production deployment and launch"
+    agents: ["devops_engineer", "developer"]
+    dependencies: ["testing"]
+    tasks:
+      - "production_environment_setup"
+      - "ci_cd_pipeline_configuration"
+      - "domain_and_ssl_setup"
+      - "monitoring_setup"
+      - "production_deployment"
+    deliverables:
+      - "Production environment"
+      - "CI/CD pipeline"
+      - "Monitoring dashboard"
+      - "Deployment documentation"
+      - "Live application"
+    quality_gates:
+      - "Deployment verification"
+      - "Monitoring validation"
+      - "Performance check"
+
+  monitoring:
+    duration: "Ongoing"
+    description: "Post-launch monitoring and maintenance"
+    agents: ["devops_engineer", "developer"]
+    dependencies: ["deployment"]
+    tasks:
+      - "performance_monitoring"
+      - "error_tracking"
+      - "user_analytics"
+      - "security_monitoring"
+      - "maintenance_and_updates"
+    deliverables:
+      - "Monitoring reports"
+      - "Performance analytics"
+      - "Error logs and fixes"
+      - "Security reports"
+      - "Update releases"
+    quality_gates:
+      - "Uptime targets"
+      - "Performance thresholds"
+      - "Security standards"
+
+# Technology stack recommendations
+technology_stack:
+  frontend:
+    primary: "Next.js with React"
+    styling: "Tailwind CSS"
+    state_management: "Zustand or Redux Toolkit"
+    ui_components: "Shadcn/ui or Chakra UI"
+  
+  backend:
+    api: "Next.js API routes or FastAPI"
+    database: "PostgreSQL with Prisma"
+    authentication: "NextAuth.js or Supabase Auth"
+    file_storage: "Cloudinary or AWS S3"
+  
+  deployment:
+    hosting: "Vercel or Netlify"
+    database: "Supabase or PlanetScale"
+    monitoring: "Vercel Analytics or Google Analytics"
+    error_tracking: "Sentry"
+
+# Quality standards
+quality_standards:
+  performance:
+    lighthouse_score: "> 90"
+    first_contentful_paint: "< 1.5s"
+    largest_contentful_paint: "< 2.5s"
+    cumulative_layout_shift: "< 0.1"
+  
+  code_quality:
+    test_coverage: "> 80%"
+    eslint_compliance: "100%"
+    typescript_strict: true
+  
+  accessibility:
+    wcag_compliance: "AA"
+    keyboard_navigation: "Full support"
+    screen_reader_compatibility: "Tested"
+  
+  security:
+    https_only: true
+    input_validation: "Comprehensive"
+    authentication: "Secure implementation"
+
+# Risk mitigation
+risks:
+  technical:
+    - risk: "Performance issues"
+      mitigation: "Regular performance testing and optimization"
+    - risk: "Security vulnerabilities"
+      mitigation: "Security audits and best practices"
+    - risk: "Browser compatibility"
+      mitigation: "Cross-browser testing"
+  
+  project:
+    - risk: "Scope creep"
+      mitigation: "Clear requirements and change management"
+    - risk: "Timeline delays"
+      mitigation: "Regular progress reviews and adjustments"
+
+# Success metrics
+success_metrics:
+  technical:
+    - "Application performance scores"
+    - "Code quality metrics"
+    - "Test coverage percentage"
+    - "Security assessment results"
+  
+  business:
+    - "User engagement metrics"
+    - "Conversion rates"
+    - "User satisfaction scores"
+    - "Time to market"
